@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title>Marilyn Monroe Tribute</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header id="title">
+      <h1>Marilyn Monroe</h1>
+    </header>
+    <main id="main">
+      <figure id="img-div">
+        <img id="image" src="https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTY2NzA3MDU5MTEzMzM4MTQ4/marilyn_monroe_photo_alfred_eisenstaedt_pix_inc_the_life_picture_collection_getty_images_53376357_cropped.jpg">
+        <figcaption id="img-caption">A photo taken in 1953 at her home by Alfred Eisenstaedt.</figcaption>
+      </figure>
+      <div id="tribute-info">
+        <h2>A history of Marilyn Monroe:</h2>
+      </div>
+      <div>
+        <ul>
+          <li><strong>1926</strong> - Born June 1st, in Los Angeles as Norma Jeane</li>
+          <li><strong>1944</strong> - Discovered by photographer David Conover</li>
+          <li><strong>1946</strong> - Signed her first studio contract with 20th Century Fox and changed her name to Marilyn Monroe</li>
+          <li><strong>1947</strong> - Contract is dropped</li>
+          <li><strong>1948</strong> - Signs with Columbia Pictures and will lend a decent singing voice to a musical, Ladies of the Chorus</li>
+          <li><strong>1952</strong> - Gets her first Life magazine cover</li>
+          <li><strong>1953</strong> - Niagara premieres and is her breakthrough performance. Marilyn’s beguiling Lorelei Lee, the now-classic performance of “Diamonds Are a Girl’s Best Friend,” and perfect comedic timing establish her as a star.</li>
+          <li><strong>1954</strong> - Marriage to baseball star Joe DiMaggio but later that year divorce and films the famous skirt-blowing scene from The Seven Year Itch before hundreds of spectators in midtown Manhattan</li>
+          <li><strong>1955</strong> - Starts up her own Production company named Marilyn Monroe Productions. Enrolls in the Actors Studio, run by Lee Strasberg and comes out with Seven Year Itch</li>
+          <li><strong>1956</strong> - Converts to Judaism and marries the playwright Arthur Miller</li>
+          <li><strong>1959</strong> - Goes on to win the Golden Globe Award for Best Actress</li>
+          <li><strong>1961</strong> - Marilyn and Arthur Miller are divorce and she checks into a New York psychiatric clinic later on</li>
+          <li><strong>1962</strong> - Wins World Film Favorite at the Golden Globe Awards. In May, Marilyn sewn into a see-through sequined dress, performs a breathy rendition of “Happy Birthday” for President John F. Kennedy. On August 5th, she was found dead in her Brentwood home, of an apparent barbiturate overdose.</li>
+        </ul>
+      </div>
+      <div id="quote">
+        <p>"Imperfection is beauty, madness is genius and it's better to be absolutely ridiculous than absolutely boring."</p>
+        <p>-- Marilyn Monroe</p>
+      </div>
+      <div id="more-info">
+        <p>Read More about this unforgettable women at <a href="https://www.americanheritage.com/marilyn-monroe-chronology#7" id="tribute-link" target="_blank">American Heritage.</a></p>
+      </div>
+    </main>
+  </body>
+</html>
+
+CSS
+
+body {
+  background-color: #C9BBBB;
+}
+#image {
+  width: 400px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 10px;
+}
+#img-div {
+  background-color: white;
+}
+@media (max-width:800px) {
+  #image {
+    width: 80%;
+  }
+}
+h1, p {
+  text-align: center;
+}
+h1 {
+  margin: 20px;
+  font-size: 40px;
+}
+#tribute-info, #img-caption {
+  text-align: center;
+}
+h2 {
+  margin: 50px;
+}
+ul > li {
+  width: 50%;
+  margin: 20px auto;
+  display: block;
+  padding-left: 100px;
+}
+#img-caption {
+  padding-bottom: 10px;
+}
+#quote {
+  margin: 40px;
+  font-style: italic;
+  font-size: 17px;
+}
+#more-info {
+  font-size: 20px;
+  font-weight: bold;
+}
