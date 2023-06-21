@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="styles.css">
+    <title>Landing Page</title>
+  </head>
+  <body>
+    <header id="header">
+      <img id="header-img" src="https://www.adobe.com/express/create/media_175153867f2c69712460089652116075e6c9db69d.jpeg?width=400&format=jpeg&optimize=medium" alt="logo" width="100px"> 
+      <nav id="nav-bar">
+        <ul>
+          <li><a class="nav-link" href="#Treats">Treats</a></li>
+          <li><a class="nav-link" href="#Pricing">Pricing</a></li>
+          <li><a class="nav-link" href="#Delivery">Delivery</a></li>
+        </ul>
+      </nav>
+    </header>
+    <form id="form" action="https://www.freecodecamp.com/email-submit">
+      <h3>Be selected to win a free box!</h3>
+      <input id="email" name="email" placeholder="Enter your email address" type="email"/>
+      <input type="submit" id="submit"/>
+    </form>
+    <section id="Treats">
+      <div id="Straw">
+        <img src="https://media.istockphoto.com/illustrations/watercolor-strawberry-illustration-id1200128090?k=20&m=1200128090&s=170667a&w=0&h=MtZiH_yfKLkmdXSgOwImGOwahK5eMUv2U3OKNcZqV0o=" id="straw-img" width="200px"/>
+        <div id="straw-text">
+        <h3>Strawberries</h3>
+        <p id="idk">Strawberries covered in <em id="straw-flavor">White Chocolate, Milk Chocolate, Almonds, or Fruity Pebbles</em>!</p>
+        </div>
+      </div>
+      <div id="marsh">
+        <img src="https://thumbs.dreamstime.com/b/cute-little-marshmallows-candy-cute-two-marshmallows-faces-sweet-puffy-candy-pink-white-marshmallow-cute-face-103703015.jpg" id="marsh-img" width="150px"/>
+        <div id="marsh-text">
+        <h3>Marshmallows</h3>
+        <p>White marshmallows covered in <em>Dark Chocolate or White chocolate</em>!</p>
+        </div>
+      </div>
+      <div id="injectors">
+        <img src="http://sc04.alicdn.com/kf/Hf7746efbd420477ab3a1eaddd20849f3t.jpg" width="200px" id="inject-img"/>
+        <div id="inject-text">
+        <h3>Injectors</h3>
+        <p>You can choose to add injecters into your fruit or on the side with choices of <em>Tito's Vodka, Hennessy, or Pink Champagne</em>!</p>
+        </div>
+      </div>
+    </section>
+    <video id="video" width="" controls>
+      <source src="movie.mp4" type="video/mp4">
+      <source src="movie.ogg" type="video/ogg">
+    </video>
+    <section id="Pricing">
+      <div>
+        <header>6 Pack</header>
+        <p>Strawberries - <strong>$12</strong></p>
+        <p>Marshmallows - <strong>$10</strong></p>
+      </div>
+      <div>
+        <header>12 Pack</header>
+        <p>Strawberries - <strong>$20</strong></p>
+        <p>Marshmallows - <strong>$18</strong></p>
+      </div>
+      <div>
+        <header>Injectors</header>
+        <p>Vodka - <strong>$2</strong> each</p>
+        <p>Hennessy - <strong>$3</strong> each</p>
+        <p>Champagne - <strong>$2 </strong>each</p>
+      </div>
+    </section>
+    <section id="Delivery">
+      <h3>Can Deliver orders that are $20 and up for FREE! Orders under $20 will pay a delivery fee of $5.</h3>
+    </section>
+  </body>
+</html>
+
+CSS
+
+#header {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  background-color: #FAE6E0;
+  position: fixed; 
+  top: 0;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+#form {
+  margin-top: 150px;
+  text-align: center;
+}
+
+body {
+  margin:0;
+  font-family: sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+ul > li {
+ text-decoration: none;
+ display: inline-block;
+}
+
+.nav-link {
+  display: flex;
+  color: black;
+  margin: 30px;
+}
+a:visited {
+  color: black;
+}
+a {
+  text-decoration: none;
+}
+h3 {
+  font-size: 25px;
+  padding-bottom: 10px;
+}
+h3, p {
+  margin: 0;
+}
+#Treats {
+  margin: 30px auto;
+  margin-bottom: none;
+  height: 500px;
+  width: 800px; 
+}
+#Straw, #marsh, #injectors {
+  display: flex;
+  justify-content: center;
+}
+#straw-text, #marsh-text, #inject-text {
+  margin-top: 50px;
+  margin-left: 50px;
+}
+#video {
+  display: block;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+#marsh-text {
+  margin-left: 27px;
+}
+
+#Pricing {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 70px;
+}
+#Pricing div {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+}
+
+#Pricing header {
+  background-color: #FAE6E0;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#Pricing p {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+#Delivery {
+  display: block;
+  text-align: center;
+}
+
+@media (max-width: 1000px) {
+  body {
+    width: 800px;
+  }
+}
