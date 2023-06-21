@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <h1 id="title">SylvsLux Survey Form </h1>
+    <p id="description"><em>Thank you for taking the time to help us improve our service</em></p>
+    <form id="survey-form">
+      <fieldset>
+        <label id="name-label">Name <input placeholder="Enter your name" id="name" type="text" required/></label>
+        <label id="email-label">Email <input placeholder="Enter your Email" id="email" type="email" required/></label>
+        <label id="number-label">Age <input placeholder="Age" id="number" required" type="number" min="10" max="99"/></label>
+        <label>Which option best describes your satisfaction?
+          <select id="dropdown">
+            <option> Very Satisfied</option>
+            <option>Satisfied</option>
+            <option>Average</option>
+            <option>Unsatisfied</option>
+            <option>Very Unsatisfied</option>
+          </select>
+        </label>
+        <label>Would you recommend freeCodeCamp to a friend?</label>
+        <label><input class="inline" type="radio" name="yes-no" value="yes"/> Yes</label>
+        <label><input class="inline" type="radio" name="yes-no" value="maybe"/> Maybe</label>
+        <label><input class="inline" type="radio" name="yes-no" value="no"/> No</label>
+      </fieldset>
+      <fieldset>
+        <label>What is your favorite style on SylvsLux?
+          <select id="dropdown">
+            <option>Precious</option>
+            <option>Luxury</option>
+            <option>Boujie</option>
+          </select>
+        <label>What would you like to see improved? (Check all that apply)</label>
+        <label><input type="checkbox" value="more styles" name="improve" class="inline"/> More styles</label>
+        <label><input type="checkbox" value="Different colors" name="improve" class="inline"> Different colors</label>
+        <label><input type="checkbox" value="Faster shipping" name="improve" class="inline"> Faster shipping</label>
+        <label>Any comments or suggestions?<textarea placeholder="Enter a comment here.."></textarea>
+        </label>
+      </fieldset>
+      <input type="submit" id="submit"/>
+    </form>
+  </body>
+</html>
+
+CSS
+label {
+  display: block;
+  margin: 1em 0;
+}
+body {
+  font-family: arial, sans serif;
+  background-color: #AA336A;
+  width: 100%;
+  margin: 0;
+  font-size: 16px;
+  padding-bottom: 1em;
+}
+h1, p {
+  text-align: center;
+  margin: 1em auto;
+}
+fieldset {
+  border: none;
+  margin: 0.5em;
+}
+form {
+  width: 70%;
+  margin: 0 auto;
+  padding-bottom: 2em;
+  max-width:500px;
+  min-width: 300px;
+  background-color: rgba(255, 51, 162, .2);
+}
+select, textarea {
+  display: block;
+}
+input, textarea, select {
+  margin: 3px 0 0 0;
+  width: 100%;
+  min-height: 1em;
+}
+input, textarea {
+  width: 100%;
+  background-color: pink;
+  border: 4px solid pink;
+}
+input[type="submit"] {
+  display: block;
+  width: 70%;
+  margin: 0 auto;
+  font-size: 18px;
+  background-color: white;
+  border-color: white;
+}
+.inline {
+  width: unset;
+  margin: 0 1 0 0;
+  vertical-align:middle; 
+}
