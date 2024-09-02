@@ -1,0 +1,102 @@
+#include <stdio.h>
+
+#define MAX_INPUTS 100
+
+double bankArray[MAX_INPUTS];
+int size = 0; // Initialize size to 0
+
+void enterDeposits(double bankArray[], int *size) {
+    printf("Enter Deposit: ");
+    scanf("%lf", &bankArray[*size]);
+    (*size)++;
+}
+
+void sumOfDeposits(double bankArray[], int size) {
+    printf("Sum of all deposits: ");
+
+    double sum = 0.0;
+    for (int i = 0; i < size; i++) {
+        sum += bankArray[i];
+    }
+    printf("%lf\n", sum);
+}
+
+void highestToLowest(double bankArray[], int size) {
+    printf("The deposits from highest to lowest are: ");
+
+    // Bubble sort to sort the deposits
+    for (int i = 0; i < size - 1; i++) {
+        for (int j = 0; j < size - 1; j++) {
+            if (bankArray[j] < bankArray[j + 1]) {
+                double temp = bankArray[j];
+                bankArray[j] = bankArray[j + 1];
+                bankArray[j + 1] = temp;
+            }
+        }
+    }
+
+    for (int i = 0; i < size; i++) {
+        printf("%lf ", bankArray[i]);
+    }
+    printf("\n");
+}
+
+double depositAverage(double bankArray[], int size) {
+    double sum = 0.0;
+    for (int i = 0; i < size; i++) {
+        sum += bankArray[i];
+    }
+    return sum / size;
+}
+
+double lowestDeposit(double bankArray[], int size) {
+    double lowest = bankArray[0];
+    for (int i = 1; i < size; i++) {
+        if (bankArray[i] < lowest) {
+            lowest = bankArray[i];
+        }
+    }
+    return lowest;
+}
+
+int main() {
+    char choice;
+
+    do {
+        printf("\nBanking Main Menu:\n");
+        printf("[G]et a new deposit\n");
+        printf("[S]um of all deposits\n");
+        printf("[D]eposits will be displayed from highest to lowest deposit\n");
+        printf("[A]verage of all deposits\n");
+        printf("[L]owest deposit will be displayed\n");
+        printf("[Q]uit the program\n");
+
+        printf("Enter your choice: ");
+        scanf(" %c", &choice);
+
+        switch (choice) {
+            case 'G':
+                enterDeposits(bankArray, &size);
+                break;
+            case 'S':
+                sumOfDeposits(bankArray, size);
+                break;
+            case 'D':
+                highestToLowest(bankArray, size);
+                break;
+            case 'A':
+                printf("The average is: %lf\n", depositAverage(bankArray, size));
+                break;
+            case 'L':
+                printf("The lowest is: %lf\n", lowestDeposit(bankArray, size));
+                break;
+            case 'Q':
+                printf("Quitting the program...\n");
+                break;
+            default:
+                printf("Invalid choice. Please try again.\n");
+        }
+    } while (choice != 'Q');
+
+    return 0;
+}
