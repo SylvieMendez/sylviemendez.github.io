@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_LENGTH 100
+
+void encodeString(char *input);
+char encodeCharacter(char ch);
+
+int main() {
+    char input[MAX_LENGTH];
+    char choice;
+
+    do {
+        printf("Enter a string: ");
+        scanf("%99[^\n]", input); // Read up to 99 characters until newline
+        getchar(); // Clear the newline character
+        
+        encodeString(input);
+
+        printf("\nDo you want to encode another string? (y/n): ");
+        scanf(" %c", &choice);
+        getchar(); 
+    } while (choice == 'y' || choice == 'Y');
+
+    return 0;
+}
+
+// Function to encode
+void encodeString(char *input) {
+    printf("\nOriginal string: %s\n", input);
+    printf("Encoded string: ");
+
+    
+    for (int i = 0; input[i] != '\0'; i++) {
+        printf("%c", encodeCharacter(input[i]));
+    }
+
+    printf("\n");
+}
+
+// Function to encode a single character based on the provided decoder chart
+char encodeCharacter(char ch) {
+    
+    const char decoder[] = {
+        'H', 'I', 'V', 'J', 'K', 'W', 'L', 'A', 'M', 'Y', 'N',
+        'B', 'X', 'O', 'Z', 'C', 'T', 'P', 'U', 'D', 'Q', 'S',
+        'R', 'E', 'G', 'F'
+    };
+
+    // Convert the character to uppercase if it's a lowercase letter
+    if (ch >= 'a' && ch <= 'z') {
+        ch -= 'a' - 'A';
+    }
+
+    // If the character is an uppercase letter, encode it using the decoder chart
+    if (ch >= 'A' && ch <= 'Z') {
+        return decoder[ch - 'A'];
+    } else {
+        return ch;
+    }
+}
